@@ -141,7 +141,54 @@
 //   menu.classList.add('menu-mobile')
 // }
 
-// EVENTOS 
+// // EVENTOS 
+
+// // Quando o usuário clicar nos links internos do site,
+// // adicione a classe ativo ao item clicado e remova dos
+// // demais itens caso eles possuam a mesma. Previna
+// // o comportamento padrão desses links
+
+// const links = document.querySelectorAll('a[href^="#"]')
+
+// function fClick(event) {
+//   event.preventDefault()
+
+//   links.forEach((item) => {
+//     item.classList.remove('ativo')
+//   })
+
+//   event.target.classList.add('ativo')
+// }
 
 
+// links.forEach((item) => {
+//   item.addEventListener('click', fClick)
+// });
 
+// // Selecione todos os elementos do site começando a partir do body,
+// // ao clique mostre exatamente quais elementos estão sendo clicados
+
+// const eleList = document.body.getElementsByTagName("*")
+// const eleListArray = Array.from(eleList)
+
+// function howIs(event) {
+//   console.log(event.currentTarget)
+//   event.target.remove()
+// }
+
+// eleListArray.forEach((item) => {
+//   item.addEventListener('click', howIs)
+// });
+
+// // Utilizando o código anterior, ao invés de mostrar no console,
+// // remova o elemento que está sendo clicado, o método remove() remove um elemento
+
+
+// // Se o usuário clicar na tecla (t), aumente todo o texto do site. 
+
+// function fontSizeMax(event) {
+//   if (event.key == 't') {
+//     document.querySelector('body').classList.toggle('t')
+//   }
+// }
+// window.addEventListener('keydown', fontSizeMax)
