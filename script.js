@@ -96,29 +96,48 @@
 //   item.setAttribute('href', './index.html')
 // });
 
-//Dumens~oes e Distâncias
+// //Dumens~oes e Distâncias
 
-// Verifique a distância da primeira imagem
-// em relação ao topo da página
-const img = document.querySelector('img')
-console.log(img.offsetTop)
+// // Verifique a distância da primeira imagem
+// // em relação ao topo da página
+// const img = document.querySelector('img')
+// console.log(img.offsetTop)
 
-const imgRect = document.querySelector('img').getBoundingClientRect()
+// const imgRect = document.querySelector('img').getBoundingClientRect()
 
-console.log(imgRect.top)
-// Retorne a soma da largura de todas as imagens
-const allImgs = document.querySelectorAll('img')
-let larguraTotal = 0;
-allImgs.forEach((item) => {
-  console.log(larguraTotal + ' + ' + item.offsetWidth)
-  larguraTotal += item.offsetWidth
-});
+// console.log(imgRect.top)
+// // Retorne a soma da largura de todas as imagens
+// const allImgs = document.querySelectorAll('img')
+// let larguraTotal = 0;
+// allImgs.forEach((item) => {
+//   console.log(larguraTotal + ' + ' + item.offsetWidth)
+//   larguraTotal += item.offsetWidth
+// });
+// console.log(larguraTotal)
 
-console.log(larguraTotal)
-// Verifique se os links da página possuem
-// o mínimo recomendado para telas utilizadas
-// com o dedo. (48px/48px de acordo com o google)
+// // Verifique se os links da página possuem
+// // o mínimo recomendado para telas utilizadas
+// // com o dedo. (48px/48px de acordo com o google)
 
-// Se o browser for menor que 720px,
-// adicione a classe menu-mobile ao menu
+// const links = document.querySelectorAll('a')
+
+// links.forEach((item) => {
+//   let rect = item.getBoundingClientRect()
+//   if (rect.width < 48 || rect.height < 48) {
+//     console.log(item, "é menor que 48px/48px",
+//       'width: ', rect.width,
+//       'height: ', rect.height
+//     )
+//   } else {
+//     console.log(item, 'passou no teste')
+//   }
+// });
+// // Se o browser for menor que 720px,
+// // adicione a classe menu-mobile ao menu
+
+// const menu = document.querySelector('.menu')
+
+// if (window.innerWidth < 720) {
+//   menu.classList.add('menu-mobile')
+// }
 
