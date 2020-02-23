@@ -124,6 +124,7 @@ body {
 }
 
 .faq-lista dt{
+  font-size: 18px;
   font-family: monospace;
   font-weight: bold;
   margin-top: 2rem;
@@ -138,6 +139,7 @@ body {
   height: 10px;
   margin-right: 10px;
   background-color: #fb5;
+  font-size: 17px;
 }
 
 .faq-lista dd {
@@ -232,3 +234,32 @@ body {
     transform: translate3d(0,0,0);
   }
 }
+
+.js .js-faq-list dd{   
+  display: none;   
+}
+.js .js-faq-list dd.active{
+  display: block;  
+  animation: slideDown .5s forwards;
+}
+.js .js-faq-list dt::after{
+  content: "⬎";
+  margin-left: 10px;
+}
+
+.js .js-faq-list dt.active::after{
+  content: "⬏";
+}
+
+@keyframes slideDown{
+  from{
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 20vh;
+  }
+}
+
+
