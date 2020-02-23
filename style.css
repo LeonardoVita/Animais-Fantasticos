@@ -97,6 +97,7 @@ body {
   height: 370px;
   overflow-y: scroll;  
   grid-column: 2;
+  cursor: pointer;
 }
 
 .animais ul::-webkit-scrollbar{
@@ -123,6 +124,7 @@ body {
 }
 
 .faq-lista dt{
+  font-size: 18px;
   font-family: monospace;
   font-weight: bold;
   margin-top: 2rem;
@@ -137,6 +139,7 @@ body {
   height: 10px;
   margin-right: 10px;
   background-color: #fb5;
+  font-size: 17px;
 }
 
 .faq-lista dd {
@@ -205,3 +208,71 @@ body {
     margin-bottom: 0;
   }
 }
+
+/* JAVASCRIPT CLASSES */
+
+.js .t{
+  font-size: 36px !important;
+}
+
+.js .js-tab-content section{
+  display: none;
+}
+
+.js .js-tab-content section.ativo{
+  display: block !important;
+  animation: show .5s;
+}
+
+@keyframes show{
+  from{
+    opacity: 0;
+    transform: translate3d(-30px,0,0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+.js .js-faq-list dd{   
+  display: none;   
+}
+.js .js-faq-list dd.active{
+  display: block;  
+  animation: slideDown .5s forwards;
+}
+.js .js-faq-list dt::after{
+  content: "⬎";
+  margin-left: 10px;
+}
+
+.js .js-faq-list dt.active::after{
+  content: "⬏";
+}
+
+@keyframes slideDown{
+  from{
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 20vh;
+  }
+}
+
+.js .js-scroll {
+  opacity: 0;  
+  transform: translate3d(-30px,0,0);
+  transition:.5s;
+}
+
+.js .js-scroll.active{
+  opacity: 1;
+  transform: translate3d(0,0,0);  
+}
+
+
+
+

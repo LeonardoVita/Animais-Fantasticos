@@ -1,143 +1,97 @@
+function initTabMenu() {
+  const tabMenu = document.querySelectorAll('.js-tab-menu li')
+  const tabContent = document.querySelectorAll('.js-tab-content section')
 
-// // SELECIONANDO ELEMENTOS 
-// // Retorne no console todas as imagens do site
-// const queryImg = document.querySelectorAll('img')
-// console.log("Imagens com querySelectorAll")
-// console.log(queryImg)
+  if (tabMenu.length && tabContent.length) {
 
-// const getEleImg = document.getElementsByTagName('img')
-// console.log('Imagens com getElementByTagName')
-// console.log(getEleImg)
-// // Retorne no console apenas as imagens que começaram com a palavra imagem
-// const eleImage = document.querySelectorAll('[src^="img/imagem"]')
-// console.log('Imagens que começam com a palavra imagem')
-// console.log(eleImage)
-// // Selecione todos os links internos (onde o href começa com #)
+    function activeTab(index) {
+      tabContent.forEach((item) => {
+        item.classList.remove('ativo')
+      });
+      tabContent[index].classList.add('ativo')
+    }
 
-// // Selecione o primeiro h2 dentro de .animais-descricao
-// const firstH2 = document.querySelector(".animais-descricao h2")
-// console.log(firstH2)
-// // Selecione o último p do site
-// const lastP = document.querySelectorAll("p")
-// console.log(lastP[lastP.length - 1])
+    tabMenu.forEach((item, index) => {
+      item.addEventListener('click', () => activeTab(index))
+    });
+
+  }
+
+}
+initTabMenu();
+
+function initFaqList() {
+  const faqDt = document.querySelectorAll('.js-faq-list dt')
+
+  if (faqDt.length) {
+
+    function showDD() {
+      this.classList.toggle('active')
+      this.nextElementSibling.classList.toggle('active')
+    }
+
+    faqDt.forEach((item) => {
+      item.addEventListener('click', showDD)
+    });
+
+  }
+
+}
+initFaqList();
 
 
-// // ForEach e Arrow-Function 
+function initSmoothScroll() {
+  const linkInterno = document.querySelectorAll('.js-nav-manu a[href^="#"]')
 
-// // Mostre no console cada parágrado do site  
-// //Mostre o texto dos parágrafos no console
-// const paragrafos = document.querySelectorAll('p'); 
+  if (linkInterno.length) {
 
-// // function 
-// paragrafos.forEach(function(item){
-//   return console.log(item.innerText);
-// });
-// //arrow function
-// paragrafos.forEach((item) => {
-//   return console.log(item.innerText);
-// });
-// //arrow function reduzida
-// paragrafos.forEach((item) => console.log(item.innerText));
+    function scrollToSection(event) {
+      event.preventDefault()
 
-// // foreach com html collection
-// const paragrafosEle = document.getElementsByTagName('p');
-// const paragrafosArray = Array.from(paragrafosEle);
+      const href = this.getAttribute('href')
+      const section = document.querySelector(href)
+      const topo = section.offsetTop;
 
-// paragrafosArray.forEach((item) => console.log(item.innerText));
+      section.scrollIntoView({
+        behavior: 'smooth'
+      })
 
-// // Como corrigir os erros abaixo:
-// const imgs = document.querySelectorAll('img');
+      //forma alternativa
+      // window.scrollTo({
+      //   top: topo,
+      //   behavior: 'smooth'
+      // })
 
-// imgs.forEach((item, index) => {
-//   console.log(item, index);
-// });
+    }
 
-// let i = 0;
-// imgs.forEach(() => {
-//   console.log(i++);
-// });
+    linkInterno.forEach((item) => {
+      item.addEventListener('click', scrollToSection)
+    })
 
-// imgs.forEach(() => console.log(i++));
+  }
 
-// //Classes e Atributos
+}
+initSmoothScroll();
 
-// // Adicione a classe ativo a todos os itens do menu
-// const itemsDoMenu = document.querySelectorAll('.menu li')
+function initAnimeOnScroll() {
+  const sections = document.querySelectorAll('.js-scroll')
 
-// itemsDoMenu.forEach((item, index) => {
-//   item.classList.add('ativo')
-//   return console.log(`adcionado ativo ao item: ${index + 1}`)
-// })
+  if (sections.length) {
+    const windowHeight = window.innerHeight * 0.65;
 
-// // Remove a classe ativo de todos os itens do menu e mantenha apenas no primeiro
+    function animaScroll() {
 
-// itemsDoMenu.forEach((item, index) => {
-//   if (index != 0) {
-//     item.classList.remove('ativo')
-//     return console.log(`removido ativo do item: ${index + 1}`)
-//   }
-// })
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top - windowHeight;
 
-// // Verifique se as imagens possuem o atributo alt
+        if (sectionTop < 0) {
+          section.classList.add('active')
+        }
 
-// const imgs = document.querySelectorAll('img')
-
-// imgs.forEach((item, index, array) => {
-//   if (!item.hasAttribute('alt')) {
-//     console.log(array[index], "não tem o atributo alt")
-//   }
-// })
-
-// // Modifique o href do link externo no menu
-
-// const itemsDoMenuA = document.querySelectorAll('.menu a')
-
-// itemsDoMenuA.forEach((item) => {
-//   item.setAttribute('href', './index.html')
-// });
-
-// //Dumens~oes e Distâncias
-
-// // Verifique a distância da primeira imagem
-// // em relação ao topo da página
-// const img = document.querySelector('img')
-// console.log(img.offsetTop)
-
-// const imgRect = document.querySelector('img').getBoundingClientRect()
-
-// console.log(imgRect.top)
-// // Retorne a soma da largura de todas as imagens
-// const allImgs = document.querySelectorAll('img')
-// let larguraTotal = 0;
-// allImgs.forEach((item) => {
-//   console.log(larguraTotal + ' + ' + item.offsetWidth)
-//   larguraTotal += item.offsetWidth
-// });
-// console.log(larguraTotal)
-
-// // Verifique se os links da página possuem
-// // o mínimo recomendado para telas utilizadas
-// // com o dedo. (48px/48px de acordo com o google)
-
-// const links = document.querySelectorAll('a')
-
-// links.forEach((item) => {
-//   let rect = item.getBoundingClientRect()
-//   if (rect.width < 48 || rect.height < 48) {
-//     console.log(item, "é menor que 48px/48px",
-//       'width: ', rect.width,
-//       'height: ', rect.height
-//     )
-//   } else {
-//     console.log(item, 'passou no teste')
-//   }
-// });
-// // Se o browser for menor que 720px,
-// // adicione a classe menu-mobile ao menu
-
-// const menu = document.querySelector('.menu')
-
-// if (window.innerWidth < 720) {
-//   menu.classList.add('menu-mobile')
-// }
-
+      });
+    }
+    animaScroll();
+    window.addEventListener('scroll', animaScroll)
+  }
+}
+initAnimeOnScroll();
