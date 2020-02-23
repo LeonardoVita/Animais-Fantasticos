@@ -38,3 +38,37 @@ function initFaqList() {
 
 }
 initFaqList();
+
+
+function initSmoothScroll() {
+  const linkInterno = document.querySelectorAll('.js-nav-manu a[href^="#"]')
+
+  if (linkInterno.length) {
+
+    function scrollToSection(event) {
+      event.preventDefault()
+
+      const href = this.getAttribute('href')
+      const section = document.querySelector(href)
+      const topo = section.offsetTop;
+
+      section.scrollIntoView({
+        behavior: 'smooth'
+      })
+
+      //forma alternativa
+      // window.scrollTo({
+      //   top: topo,
+      //   behavior: 'smooth'
+      // })
+
+    }
+
+    linkInterno.forEach((item) => {
+      item.addEventListener('click', scrollToSection)
+    })
+
+  }
+
+}
+initSmoothScroll();
