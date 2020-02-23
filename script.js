@@ -72,3 +72,26 @@ function initSmoothScroll() {
 
 }
 initSmoothScroll();
+
+function initAnimeOnScroll() {
+  const sections = document.querySelectorAll('.js-scroll')
+
+  if (sections.length) {
+    const windowHeight = window.innerHeight * 0.65;
+
+    function animaScroll() {
+
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top - windowHeight;
+
+        if (sectionTop < 0) {
+          section.classList.add('active')
+        }
+
+      });
+    }
+    animaScroll();
+    window.addEventListener('scroll', animaScroll)
+  }
+}
+initAnimeOnScroll();
