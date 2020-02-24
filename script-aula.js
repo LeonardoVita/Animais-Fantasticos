@@ -192,3 +192,168 @@
 //   }
 // }
 // window.addEventListener('keydown', fontSizeMax)
+
+// // OBJECTS 
+
+// // Transforme o objeto abaixo em uma Constructor Function
+// function Pessoa(nomeParam, idadeParam) {
+//   this.nome = nomeParam
+//   this.idade = idadeParam
+//   this.andar = (passos) => {
+//     console.log(this.nome + ' andou ' + passos + ' passos')
+//   }
+// }
+
+// const leo = new Pessoa('Leonardo', 24)
+// console.log(leo.nome, leo.andar(100))
+
+// // Crie 3 pessoas, João - 20 anos,
+// // Maria - 25 anos, Bruno - 15 anos
+
+// const jogao = new Pessoa('Joao', 20)
+// const maria = new Pessoa('Maria', 25)
+// const Bruno = new Pessoa('Bruno', 15)
+
+
+// // Crie uma Constructor Function (Dom) para manipulação
+// // de listas de elementos do dom. Deve conter as seguintes
+// // propriedades e métodos:
+// //
+// // elements, retorna NodeList com os elementos selecionados
+// // addClass(classe), adiciona a classe a todos os elementos
+// // removeClass(classe), remove a classe a todos os elementos
+
+// function Dom(seletorParam) {
+//   this.elements = document.querySelectorAll(seletorParam)
+
+//   this.addClass = (classParam) => {
+
+//     this.elements.forEach((item) => {
+//       item.classList.add(classParam)
+//     });
+
+//   }
+
+//   this.removeClass = (classParam) => {
+
+//     this.elements.forEach((item) => {
+//       item.classList.remove(classParam)
+//     });
+
+//   }
+
+// }
+
+// const animaisImg = new Dom('.animais li')
+// console.log(animaisImg.elements)
+// animaisImg.addClass('ativo')
+// animaisImg.removeClass('ativo')
+
+// // PROTOTIPE 
+
+// // Crie uma função construtora de Pessoas
+// // Deve conter nome, sobrenome e idade
+// // Crie um método no protótipo que retorne
+// // o nome completo da pessoa
+
+// function Pessoas(nomeParam, sobrenomeParam, idadeParam) {
+//   this.nome = nomeParam
+//   this.sobrenome = sobrenomeParam
+//   this.idade = idadeParam
+// }
+
+// Pessoas.prototype.fullName = function () {
+//   return this.nome + ' ' + this.sobrenome
+// }
+
+// const andre = new Pessoas('andre', 'silva', 28)
+
+// console.log(andre.fullName())
+
+
+
+
+// // Liste os métodos acessados por 
+// // dados criados com NodeList,
+// // HTMLCollection, Document
+
+// // Liste os construtores dos dados abaixo
+// const li = document.querySelector('li');
+
+// li;
+// li.click;
+// li.innerText;
+// li.value;
+// li.hidden;
+// li.offsetLeft;
+// li.click();
+
+// // Qual o construtor do dado abaixo:
+// li.hidden.constructor.name;
+
+// // STRINGS 
+// // Utilizando o foreach na array abaixo,
+// // some os valores de Taxa e os valores de Recebimento
+
+// const transacoes = [
+//   {
+//     descricao: 'Taxa do Pão',
+//     valor: 'R$ 39',
+//   },
+//   {
+//     descricao: 'Taxa do Mercado',
+//     valor: 'R$ 129',
+//   },
+//   {
+//     descricao: 'Recebimento de Cliente',
+//     valor: 'R$ 99',
+//   },
+//   {
+//     descricao: 'Taxa do Banco',
+//     valor: 'R$ 129',
+//   },
+//   {
+//     descricao: 'Recebimento de Cliente',
+//     valor: 'R$ 49',
+//   },
+// ];
+
+// let valorTotal = 0;
+
+// transacoes.forEach((item) => {
+//   valorTotal += parseInt(item.valor.slice(3));
+// });
+
+// console.log(valorTotal)
+
+// // Retorne uma array com a lista abaixo
+// const transportes = 'Carro;Avião;Trem;Ônibus;Bicicleta';
+
+// console.log(transportes.split(';'))
+
+// // Substitua todos os span's por a's
+// const html = `<ul>
+//                 <li><span>Sobre</span></li>
+//                 <li><span>Produtos</span></li>
+//                 <li><span>Contato</span></li>
+//               </ul>`;
+
+// console.log(html.replace(/[span>]+/g, 'a>'))
+
+// // Retorne o último caracter da frase
+// const frase = 'Melhor do ano!';
+
+// console.log(frase.charAt(frase.length - 1))
+
+// // Retorne o total de taxas
+// const transacoes2 = [
+//   'Taxa do Banco',
+//   '   TAXA DO PÃO',
+//   '  taxa do mercado',
+//   'depósito Bancário',
+//   'TARIFA especial'
+// ];
+
+
+
+
