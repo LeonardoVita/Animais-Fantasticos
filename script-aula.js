@@ -416,7 +416,7 @@
 // const ultimo = comidas.pop()
 // const primeiro = comidas.shift()
 // comidas.push('Arroz')
-// comidas.unshift('Peixe')
+// comidas.unshift('Peixe','batata')
 
 
 // const estudantes = ['Marcio', 'Brenda', 'Joana', 'Kleber', 'Julia'];
