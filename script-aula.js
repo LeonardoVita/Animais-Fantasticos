@@ -354,6 +354,99 @@
 //   'TARIFA especial'
 // ];
 
+// // MATH 
+
+// // Retorne um número aleatório
+// // entre 1050 e 2000
+
+// console.log('Numero Random: ', Math.floor(Math.random() * (2000 - 1050 + 1)) + 1050)
+
+// // Retorne o maior número da lista abaixo
+// const numeros = '4, 5, 20, 8, 9'
+// const numArray = numeros.split(', ')
+// const numeroMaximo = Math.max(...numArray); //SPREAD
+
+// console.log('Numero Maximo: ', numeroMaximo)
+
+// // Crie uma função para limpar os preços
+// // e retornar os números com centavos arredondados
+// // depois retorne a soma total
+// const listaPrecos = [
+//   'R$ 59,99', ' R$ 100,222',
+//   'R$ 230  ', 'r$  200'
+// ];
+
+// let precoTotal = 0
+
+// listaPrecos.forEach((preco, index) => {
+//   let precoFinal = preco;
+
+//   precoFinal = precoFinal.slice(3)
+//   precoFinal = precoFinal.trim()
+//   precoFinal = +precoFinal.replace(',', '.')
+//   precoFinal = +precoFinal.toFixed(2)
+
+//   console.log(`Preço ${index + 1}: `, precoFinal)
+//   precoTotal += precoFinal
+
+// });
+
+// console.log('preço total: ', precoTotal)
+
+// ARRAY 
+
+// criando um array like, um array que não é array
+// const obj = {
+//   0: 'andre',
+//   1: 'jaozinho',
+//   3: 'nando moura',
+//   length: 5
+// }
+
+// const objArray = Array.from(obj)
+
+// console.log(objArray)
+
+// const comidas = ['Pizza', 'Frango', 'Carne', 'Macarrão'];
+// // Remova o primeiro valor de comidas e coloque em uma variável
+// // Remova o último valor de comidas e coloque em uma variável
+// // Adicione 'Arroz' ao final da array
+// // Adicione 'Peixe' e 'Batata' ao início da array
+
+// const ultimo = comidas.pop()
+// const primeiro = comidas.shift()
+// comidas.push('Arroz')
+// comidas.unshift('Peixe')
 
 
+// const estudantes = ['Marcio', 'Brenda', 'Joana', 'Kleber', 'Julia'];
+// // Arrume os estudantes em ordem alfabética
+// // Inverta a ordem dos estudantes
+// // Verifique se Joana faz parte dos estudantes
+// // Verifique se Juliana faz parte dos estudantes
+// estudantes.sort()
+// estudantes.reverse()
+// console.log(estudantes.includes('Joana'))
+// console.log(estudantes.includes('Juliana'))
 
+// let html = `<section>
+//               <div>Sobre</div>
+//               <div>Produtos</div>
+//               <div>Contato</div>
+//             </section>`
+// // Substitua section por ul e div com li,
+// // utilizando split e join
+
+// const arraySplited = html.split('section>')
+// const arrayUl = arraySplited.join('ul>')
+// const arraySplited2 = arrayUl.split('div>')
+// const arrayLi = arraySplited2.join('li>')
+
+// console.log(arrayLi)
+
+// const carros = ['Ford', 'Fiat', 'VW', 'Honda'];
+// // Remova o último carro, mas antes de remover
+// // salve a array original em outra variável
+// const carrosOriginal = carros.slice()
+// carros.pop();
+// console.log(carrosOriginal, carros)
