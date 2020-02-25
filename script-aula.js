@@ -450,3 +450,75 @@
 // const carrosOriginal = carros.slice()
 // carros.pop();
 // console.log(carrosOriginal, carros)
+
+// ARRAY INTERAÇÕES
+
+// Selecione cada curso e retorne uma array
+// com objetos contendo o título, descricao,
+// aulas e horas de cada curso
+
+const cursos = document.querySelectorAll('.curso')
+const cursosArray = Array.from(cursos)
+
+
+
+const cursosObjs = cursosArray.map(curso => {
+  let h1 = curso.querySelector('h1').innerText
+  let p = curso.querySelector('p').innerText
+  let aula = curso.querySelector('.aulas').innerText
+  let hora = curso.querySelector('.horas').innerText
+
+  return { h1, p, aula, hora }
+});
+
+console.log(cursosObjs)
+
+// Retorne uma lista com os
+// números maiores que 100
+const numeros = [3, 44, 333, 23, 122, 322, 33];
+
+const maiores100 = numeros.filter(num => num > 100)
+console.log(maiores100)
+
+// Verifique se Baixo faz parte
+// da lista de instrumentos e retorne true
+const instrumentos = ['Guitarra', 'Baixo', 'Bateria', 'Teclado']
+
+const temBaixo = instrumentos.includes('Baixo')
+
+console.log(temBaixo)
+
+
+// Retorne o valor total das compras
+const compras = [
+  {
+    item: 'Banana',
+    preco: 'R$ 4,99'
+  },
+  {
+    item: 'Ovo',
+    preco: 'R$ 2,99'
+  },
+  {
+    item: 'Carne',
+    preco: 'R$ 25,49'
+  },
+  {
+    item: 'Refrigerante',
+    preco: 'R$ 5,35'
+  },
+  {
+    item: 'Quejo',
+    preco: 'R$ 10,60'
+  },
+  {
+    item: 'Arroz',
+    preco: 'R$ 2,60'
+  }
+]
+
+const comprasPrecos = compras.map((item) => +item.preco.replace('R$ ', '').replace(',', '.'))
+
+const totalPreco = comprasPrecos.reduce((acumulador, preco) => acumulador + preco)
+
+console.log(totalPreco) //49.42
